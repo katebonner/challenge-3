@@ -60,7 +60,7 @@ while (passwordCritera.passLength < 8) {
   var passwordArr = [];
  
   var z = 0;
-  var zMax = passwordCritera.passLength;
+  var zMax = passwordCritera.passLength - 1;
 
     while (z < zMax) {
 
