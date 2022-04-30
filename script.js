@@ -20,8 +20,9 @@ while (passwordCritera.passLength < 8) {
     // LENGTH: 7 < x < 129 CHARACTERS
     passwordCritera.passLength = window.prompt("How long would you like your password to be? (please enter a number within the inclusive range of 8 to 128)");
 
-    if (passwordCritera.passLength >= 8)
-    break; 
+    if (passwordCritera.passLength >= 8) {
+      break;
+    }
   }
     
   //LOOP THROUGH CHARACTER REQUIRMENTS UNTIL AT LEAST ONE IS SELECTED
@@ -53,14 +54,14 @@ while (passwordCritera.passLength < 8) {
 
   var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  var numbersArr = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  var numbersArr = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   var specialArr = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", ",", ".", "?"];
     
   var passwordArr = [];
  
   var z = 0;
-  var zMax = passwordCritera.passLength - 1;
+  var zMax = passwordCritera.passLength;
 
     while (z < zMax) {
 
@@ -68,7 +69,8 @@ while (passwordCritera.passLength < 8) {
         var i = Math.floor(Math.random()* (lowerCaseArr.length));
         passwordArr.push(lowerCaseArr[i]);
         z += 1;
-        if (z > zMax) {
+        if (z >= zMax) {
+          console.log("lower: " +z);
           break;
         }
       }
@@ -77,7 +79,8 @@ while (passwordCritera.passLength < 8) {
         var j = Math.floor(Math.random()* (upperCaseArr.length));
         passwordArr.push(upperCaseArr[j]);
         z += 1;
-        if (z > zMax) {
+        if (z >= zMax) {
+          console.log("upper: " +z);
           break;
         }
       }
@@ -86,7 +89,8 @@ while (passwordCritera.passLength < 8) {
         var k = Math.floor(Math.random()* (numbersArr.length));
         passwordArr.push(numbersArr[k]);
         z += 1;
-        if (z > zMax) {
+        if (z >= zMax) {
+          console.log("numbers: " +z);
           break;
         }
   
@@ -96,16 +100,19 @@ while (passwordCritera.passLength < 8) {
         var m = Math.floor(Math.random()* (specialArr.length));
         passwordArr.push(specialArr[m]);
         z += 1;
-        if (z > zMax) {
+        if (z >= zMax) {
+          console.log("special: " + z);
           break;
         }
       }
     }
+    console.log("after while loop: " + z );
 
     // ASSIGN GENERATED PASSWORD ARRAY TO PASSWORD STRING
     var password = passwordArr.join("");
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
+    return password;
 }
 
 // Add event listener to generate button
