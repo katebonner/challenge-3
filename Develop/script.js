@@ -21,7 +21,7 @@ while (passwordCritera.passLength < 8) {
     passwordCritera.passLength = window.prompt("How long would you like your password to be? (please enter a number within the inclusive range of 8 to 128)");
 
     if (passwordCritera.passLength >= 8)
-    break;
+    break; 
   }
     
   //LOOP THROUGH CHARACTER REQUIRMENTS UNTIL AT LEAST ONE IS SELECTED
@@ -67,8 +67,6 @@ while (passwordCritera.passLength < 8) {
       if (passwordCritera.lowerCase) {
         var i = Math.floor(Math.random()* (lowerCaseArr.length));
         passwordArr.push(lowerCaseArr[i]);
-        console.log(z);
-        console.log(zMax);
         z += 1;
         if (z > zMax) {
           break;
@@ -78,8 +76,6 @@ while (passwordCritera.passLength < 8) {
       if (passwordCritera.upperCase) {
         var j = Math.floor(Math.random()* (upperCaseArr.length));
         passwordArr.push(upperCaseArr[j]);
-        console.log(z);
-        console.log(zMax);
         z += 1;
         if (z > zMax) {
           break;
@@ -89,8 +85,6 @@ while (passwordCritera.passLength < 8) {
       if (passwordCritera.numericalCharacters) {
         var k = Math.floor(Math.random()* (numbersArr.length));
         passwordArr.push(numbersArr[k]);
-        console.log(z);
-        console.log(zMax);
         z += 1;
         if (z > zMax) {
           break;
@@ -101,8 +95,6 @@ while (passwordCritera.passLength < 8) {
       if (passwordCritera.specialCharacters) {
         var m = Math.floor(Math.random()* (specialArr.length));
         passwordArr.push(specialArr[m]);
-        console.log(z);
-        console.log(zMax);
         z += 1;
         if (z > zMax) {
           break;

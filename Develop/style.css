@@ -12,8 +12,12 @@ body,
   padding: 0;
 }
 
+.center {
+  text-align: center;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: avenir, sans-serif;
   background-color: #f9fbfd;
 }
 
@@ -74,7 +78,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(18, 49, 230);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -120,18 +124,19 @@ button[disabled] {
 
 @media (max-width: 690px) {
   .btn {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
+    padding: 15px 15px;
   }
 
   #password {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 500px) {
   .btn {
-    font-size: 0.8rem;
+    font-size: 2rem;
+    line-height: 1em;
   }
 }
