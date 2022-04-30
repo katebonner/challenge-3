@@ -1,13 +1,10 @@
 // GET REFRENCES TO THE #generate ELEMENT
 var generateBtn = document.querySelector("#generate");
 
-//GLOBAL 
-var password = null;
-
-// Write password to the #password input
+// WRITE PASSWORD TO #password INPUT
 function writePassword() {
 
-// ASSIGN PASSWORD CRITERA
+  // ASSIGN PASSWORD CRITERA
   var passwordCritera = {
     passLength: 7,
     lowerCase: false,
@@ -16,13 +13,18 @@ function writePassword() {
     specialCharacters: false
   }
 
-while (passwordCritera.passLength < 8) {
+  while (passwordCritera.passLength < 8) {
     // LENGTH: 7 < x < 129 CHARACTERS
     passwordCritera.passLength = window.prompt("How long would you like your password to be? (please enter a number within the inclusive range of 8 to 128)");
 
     if (passwordCritera.passLength >= 8) {
       break;
     }
+
+    if (passwordCritera.passLength == null); {
+      return 0;
+    }
+
   }
     
   //LOOP THROUGH CHARACTER REQUIRMENTS UNTIL AT LEAST ONE IS SELECTED
@@ -31,25 +33,25 @@ while (passwordCritera.passLength < 8) {
     // REQUIRE AT LEAST 1 CHARACTER TYPE IS SELECTED
     window.alert("Please confirm at least one of the following character requirements:");
 
-    // INCLUDE: LOWERCASE CHARACTERS
+    // CONFIRM: LOWERCASE CHARACTERS
     passwordCritera.lowerCase = window.confirm("Would you like to include lowercase characters?");
 
-    // INCLUDE: UPPERCASE CHARACTERS
+    // CONFIRM: UPPERCASE CHARACTERS
     passwordCritera.upperCase = window.confirm("Would you like to include uppercase characters?");
 
-    // INCLUDE: NUMERICAL CHARACTERS
+    // CONFIRM: NUMERICAL CHARACTERS
     passwordCritera.numericalCharacters = window.confirm("Would you like to include numerical characters?");
 
-    // INCLUDE: SPECIAL CHARACTERS 
+    // CONFIRM: SPECIAL CHARACTERS 
     passwordCritera.specialCharacters = window.confirm("Would you like to include special characters?");
 
+    // EDGE CASE: 0 CHARACTER REQUIREMENTS WERE CONFIRMED
     if (!(passwordCritera.lowerCase) && !(passwordCritera.upperCase) && !(passwordCritera.numericalCharacters) && !(passwordCritera.specialCharacters)) {
       window.alert("No character requirements have been confirmed.")
     }
   }
 
   // CHARACTER ARRAYS
-
   var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   var upperCaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -58,8 +60,11 @@ while (passwordCritera.passLength < 8) {
 
   var specialArr = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", ",", ".", "?"];
     
+  // PASSWORD ARRAY
   var passwordArr = [];
- 
+
+
+  // RANDOMLY PUSH CHARACTER ARRAYS TO PASSWORD ARRAY
   var z = 0;
   var zMax = passwordCritera.passLength;
 
@@ -70,7 +75,6 @@ while (passwordCritera.passLength < 8) {
         passwordArr.push(lowerCaseArr[i]);
         z += 1;
         if (z >= zMax) {
-          console.log("lower: " +z);
           break;
         }
       }
@@ -80,7 +84,6 @@ while (passwordCritera.passLength < 8) {
         passwordArr.push(upperCaseArr[j]);
         z += 1;
         if (z >= zMax) {
-          console.log("upper: " +z);
           break;
         }
       }
@@ -90,7 +93,6 @@ while (passwordCritera.passLength < 8) {
         passwordArr.push(numbersArr[k]);
         z += 1;
         if (z >= zMax) {
-          console.log("numbers: " +z);
           break;
         }
   
@@ -101,19 +103,17 @@ while (passwordCritera.passLength < 8) {
         passwordArr.push(specialArr[m]);
         z += 1;
         if (z >= zMax) {
-          console.log("special: " + z);
           break;
         }
       }
     }
-    console.log("after while loop: " + z );
 
-    // ASSIGN GENERATED PASSWORD ARRAY TO PASSWORD STRING
+    // JOIN COMPONENTS OF PASSWORD ARRAY TO A STRING
     var password = passwordArr.join("");
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
     return password;
 }
 
-// Add event listener to generate button
+// ADD EVENT LISTENER TO GENERATE A BUTTON
 generateBtn.addEventListener("click", writePassword);
