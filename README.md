@@ -34,7 +34,7 @@ cd <directory-name>
 ```
 Clone this repository.
 ```md
-git clone git@github.com:katebonner/challenge-1.git
+git clone git@github.com:katebonner/challenge-3.git
 ```
 Open the directory you have just created in your code editor of choice either manually or via:
 ```md
