@@ -1,4 +1,4 @@
-# Columbia University Coding Bootcamp - HTML CSS Git Challenge 1: Password Generator
+# Columbia University Coding Bootcamp - Password Generator Challenge 3: 
 
 ## Description
 
