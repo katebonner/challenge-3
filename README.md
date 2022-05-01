@@ -1,4 +1,4 @@
-# Columbia University Coding Bootcamp - Password Generator Challenge 3: 
+# Columbia University Coding Bootcamp - Password Generator: Challenge 3: 
 
 ## Description
 
