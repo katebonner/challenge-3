@@ -12,20 +12,21 @@ function writePassword() {
     numericalCharacters: false,
     specialCharacters: false
   }
-
-  while (passwordCritera.passLength < 8) {
+  
+  while (passwordCritera.passLength <= 8) {
     // LENGTH: 7 < x < 129 CHARACTERS
     passwordCritera.passLength = window.prompt("How long would you like your password to be? (please enter a number within the inclusive range of 8 to 128)");
 
     if (passwordCritera.passLength >= 8) {
       break;
     }
-
-    if (passwordCritera.passLength == null); {
-      return 0;
+    
+    while (passwordCritera.passLength == null) {
+      return;
     }
-
   }
+
+
     
   //LOOP THROUGH CHARACTER REQUIRMENTS UNTIL AT LEAST ONE IS SELECTED
   while (!(passwordCritera.lowerCase) && !(passwordCritera.upperCase) && !(passwordCritera.numericalCharacters) && !(passwordCritera.specialCharacters)) {
