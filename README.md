@@ -9,7 +9,7 @@ This project is a learning assignment derivative of html and css starter code gi
 
 
 **Copied here is a link to the deployed application:**
-(https://katebonner.github.io/challenge-3/)
+(https://katebonner.github.io/random-password-generator/)
 
 
 ## Table of Contents 
@@ -34,7 +34,7 @@ cd <directory-name>
 ```
 Clone this repository.
 ```md
-git clone git@github.com:katebonner/challenge-3.git
+git clone git@github.com:katebonner/random-password-generator.git
 ```
 Open the directory you have just created in your code editor of choice either manually or via:
 ```md
