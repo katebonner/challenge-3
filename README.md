@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a learning assignment derivative of html and css starter code given in the [credits](#credits) section. It is a simple website that contains a password generator. The task at hand was to create a javascript function to generate random passwords given a set of prefrences input by the user.
+This project is a learning assignment derivative of html and css starter code given in the [credits](#credits) section. It is a simple website that contains a password generator. The task at hand was to create a javascript function to generate random passwords given a set of preferences input by the user.
 
 ![password generator site](./password-generator.png)
 
